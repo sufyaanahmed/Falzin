@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { FlipLinks } from "@/components/ui/flip-links";
 import { ServicesSection } from "@/components/ui/services-section";
+import { ValuePropositionSection } from "@/components/ui/value-proposition-section";
+import { InsightsSection } from "@/components/ui/insights-section";
+import { FinalCTASection } from "@/components/ui/final-cta-section";
 import { HoverFooter } from "@/components/ui/hover-footer";
 import { colorClasses } from "@/lib/colors";
 
@@ -84,21 +87,33 @@ export function MynaHero() {
         </header>
 
         <div className="relative">
-          {/* Flip Links on the left */}
-          <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block">
-            <FlipLinks />
-          </div>
-          
           <HeroGeometric 
             badge="Falzin"
-            title1="YOUR BUSINESS SHOULDN'T RUN ON"
-            title2="MANUAL EFFORT"
+            title1="Stop Wasting Time on"
+            title2="Manual Processes"
+            subtitle="Your business deserves intelligent systems that work for you, not the other way around."
+            description="We build powerful websites, mobile apps, and ERP solutions that save you time, increase revenue, and give you back control of your business."
           />
         </div>
 
         <div id="services">
           <ServicesSection />
         </div>
+
+        <ValuePropositionSection />
+
+        <div className="relative">
+          {/* Flip Links on the left */}
+          <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block">
+            <FlipLinks />
+          </div>
+          
+          <div id="insights">
+            <InsightsSection />
+          </div>
+        </div>
+
+        <FinalCTASection />
         
         <div id="contact">
           <HoverFooter />

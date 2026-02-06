@@ -1,13 +1,13 @@
-import React from "react";
+import { colors } from "@/lib/colors";
 
 export const FlipLinks = () => {
   return (
     <section className="flex flex-col gap-1">
-      <FlipLink href="#websites">Websites</FlipLink>
-      <FlipLink href="#ios">IOS</FlipLink>
-      <FlipLink href="#android">Android</FlipLink>
-      <FlipLink href="#software">Custom Software</FlipLink>
-      <FlipLink href="#erp">ERP</FlipLink>
+      <FlipLink href="">Websites</FlipLink>
+      <FlipLink href="">IOS</FlipLink>
+      <FlipLink href="">Android</FlipLink>
+      <FlipLink href="">Custom Software</FlipLink>
+      <FlipLink href="">ERP</FlipLink>
     </section>
   );
 };
@@ -25,9 +25,10 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
         {children.split("").map((letter, i) => (
           <span
             key={i}
-            className="inline-block transition-transform duration-300 ease-in-out group-hover:-translate-y-[110%] text-[#002962]"
+            className="inline-block transition-transform duration-300 ease-in-out group-hover:-translate-y-[110%]"
             style={{
               transitionDelay: `${i * 25}ms`,
+              color: colors.primary[400]
             }}
           >
             {letter}
@@ -38,9 +39,10 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
         {children.split("").map((letter, i) => (
           <span
             key={i}
-            className="inline-block translate-y-[110%] transition-transform duration-300 ease-in-out group-hover:translate-y-0 text-[#ff002b]"
+            className="inline-block translate-y-[110%] transition-transform duration-300 ease-in-out group-hover:translate-y-0"
             style={{
               transitionDelay: `${i * 25}ms`,
+              color: colors.accent[100]
             }}
           >
             {letter}
