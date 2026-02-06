@@ -1,53 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Cpu, BarChart3, Sparkles, TrendingUp, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Globe, Smartphone, Code, Database, Sparkles, BarChart } from "lucide-react";
 import { colors } from "@/lib/colors";
+import { GradientCard } from "@/components/ui/gradient-card";
+import { FlipLinks } from "@/components/ui/flip-links";
 
 const services = [
   {
     icon: Globe,
-    title: "Websites That Convert & Scale",
-    description:
-      "Modern, responsive website development designed for speed, user experience, and search visibility. From corporate sites to e-commerce platforms — built to attract, engage, and grow your customer base.",
+    title: "Websites & Web Apps",
+    description: "Modern, responsive websites and powerful web applications built with cutting-edge technologies to deliver exceptional user experiences.",
   },
   {
     icon: Smartphone,
-    title: "iOS & Android Mobile Apps",
-    description:
-      "Native and cross-platform mobile app development that delivers seamless experiences on every device. Turn your ideas into intuitive apps that keep users coming back.",
+    title: "iOS & Android Apps",
+    description: "Native and cross-platform mobile applications that engage users and drive business growth across all devices.",
   },
   {
-    icon: Cpu,
-    title: "Custom Software Development",
-    description:
-      "Bespoke software solutions tailored to your unique processes. Automate workflows, integrate systems, and eliminate inefficiencies with powerful, secure custom applications.",
+    icon: Code,
+    title: "Custom Software",
+    description: "Tailored software solutions designed to solve your unique business challenges and streamline operations.",
   },
   {
-    icon: TrendingUp,
-    title: "Custom ERP Solutions & Implementation",
-    description:
-      "Tailored ERP customization and setup to unify your business operations. Streamline finance, inventory, HR, CRM, and more with intelligent, scalable systems that grow with you — fully configured to match your exact needs.",
+    icon: Database,
+    title: "ERP Solutions",
+    description: "Comprehensive enterprise resource planning systems that unify your business processes into one intelligent platform.",
   },
   {
     icon: Sparkles,
-    title: "AI Automation & Intelligent Workflows",
-    description:
-      "Smart automation tools powered by AI to reduce manual work, predict trends, and optimize daily operations for maximum efficiency.",
+    title: "AI & Automation",
+    description: "Intelligent automation solutions that eliminate repetitive tasks and unlock unprecedented efficiency gains.",
   },
   {
-    icon: BarChart3,
-    title: "Data Insights & Business Analytics",
-    description:
-      "Turn raw data into actionable intelligence. Custom dashboards and analytics solutions that help you make faster, smarter decisions.",
+    icon: BarChart,
+    title: "Data Analytics",
+    description: "Transform raw data into actionable insights with custom analytics dashboards and reporting tools.",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="py-24" style={{ backgroundColor: colors.primary[50] }}>
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: colors.primary[50] }}>
+      {/* Flip Links Background - positioned on the left */}
+      <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10 hidden xl:block opacity-20 pointer-events-none">
+        <div className="scale-150">
+          <FlipLinks />
+        </div>
+      </div>
+
+      {/* Flip Links Background - positioned on the right */}
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden xl:block opacity-20 pointer-events-none">
+        <div className="scale-150">
+          <FlipLinks />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,10 +65,10 @@ export function ServicesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-mono" style={{ color: colors.primary[400] }}>
-            Our Core Services
+            Our Services
           </h2>
-          <p className="text-lg max-w-3xl mx-auto" style={{ color: `${colors.primary[400]}99` }}>
-            From stunning responsive websites to enterprise-grade custom ERP customization and setup — we turn your vision into scalable digital reality.
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: `${colors.primary[400]}99` }}>
+            Comprehensive technology solutions to transform your business operations.
           </p>
         </motion.div>
 
@@ -71,61 +80,18 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              style={{ 
-                backgroundColor: `${colors.primary[100]}99`,
-                borderColor: `${colors.primary[400]}1A`
-              }}
             >
-              <div className="mb-6">
-                <div 
-                  className="inline-flex p-4 rounded-xl transition-all duration-300"
-                  style={{ 
-                    backgroundColor: `${colors.primary[300]}1A`,
-                  }}
-                >
-                  <service.icon 
-                    className="h-8 w-8 transition-colors duration-300" 
-                    style={{ color: colors.primary[300] }}
-                  />
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-bold mb-3 font-mono" style={{ color: colors.primary[400] }}>
-                {service.title}
-              </h3>
-              
-              <p className="text-sm leading-relaxed" style={{ color: `${colors.primary[400]}99` }}>
-                {service.description}
-              </p>
+              <GradientCard
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                link="#contact"
+              />
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <Button
-            size="lg"
-            className="text-white rounded-none font-mono transition-all duration-300"
-            style={{ 
-              backgroundColor: colors.accent[100],
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = colors.accent[200];
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = colors.accent[100];
-            }}
-          >
-            Explore All Services <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </motion.div>
       </div>
     </section>
   );
 }
+

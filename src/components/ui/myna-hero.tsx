@@ -8,10 +8,9 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
-import { FlipLinks } from "@/components/ui/flip-links";
 import { ServicesSection } from "@/components/ui/services-section";
 import { ValuePropositionSection } from "@/components/ui/value-proposition-section";
-import { InsightsSection } from "@/components/ui/insights-section";
+import { PortfolioSection } from "@/components/ui/portfolio-section";
 import { FinalCTASection } from "@/components/ui/final-cta-section";
 import { HoverFooter } from "@/components/ui/hover-footer";
 import { colorClasses } from "@/lib/colors";
@@ -19,7 +18,7 @@ import { colorClasses } from "@/lib/colors";
 const navigationItems = [
   { title: "SOLUTIONS", href: "#" },
   { title: "SERVICES", href: "#services" },
-  { title: "INSIGHTS", href: "#" },
+  { title: "PORTFOLIO", href: "#portfolio" },
   { title: "CONTACT", href: "#contact" },
 ];
 
@@ -102,15 +101,8 @@ export function MynaHero() {
 
         <ValuePropositionSection />
 
-        <div className="relative">
-          {/* Flip Links on the left */}
-          <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block">
-            <FlipLinks />
-          </div>
-          
-          <div id="insights">
-            <InsightsSection />
-          </div>
+        <div id="portfolio">
+          <PortfolioSection />
         </div>
 
         <FinalCTASection />
