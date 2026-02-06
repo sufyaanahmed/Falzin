@@ -1,22 +1,22 @@
-// Centralized color palette for easy theme management (Modern SaaS Style)
+// Centralized color palette for easy theme management
 export const colors = {
-  // Primary colors (White/Off-white base)
+  // Primary colors (white + indigo + peach + contrast)
   primary: {
-    50:  '#FFFFFF',   // Pure white
-    100: '#F8FAFC',   // Off-white background
-    200: '#F1F5F9',   // Light gray sections
-    300: '#E2E8F0',   // Borders/subtle elements
-    400: '#64748B',   // Secondary text
-    500: '#1E293B',   // Primary text/headings
+    50:  '#ffffff',   // Main background
+    100: '#FDF8F5',   // Warm off-white
+    200: '#FBE4D6',   // Earthy peach (sections)
+    300: '#261FB3',   // Primary blue (CTAs)
+    400: '#161179',   // Deep blue (headings)
+    500: '#0C0950',   // Dark anchor (nav / footer)
   },
 
-  // Accent colors (Vibrant SaaS palette)
+  // Accent colors
   accent: {
-    100: '#6366F1',   // Primary brand (Indigo)
-    200: '#4F46E5',   // Hover state
-    300: '#818CF8',   // Light accent
-    400: '#0EA5E9',   // Secondary accent (Sky blue)
-    500: '#10B981',   // Success/positive (Emerald)
+    100: '#261FB3',   // CTA
+    200: '#161179',   // Hover / emphasis
+    300: '#FBE4D6',   // Soft accent background
+    400: '#0C0950',   // Strong contrast
+    500: '#2C3930',   // Earthy green contrast
   },
 
   // Semantic colors

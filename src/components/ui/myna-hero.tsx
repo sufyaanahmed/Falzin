@@ -8,16 +8,16 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { ValuePropositionSection } from "@/components/ui/value-proposition-section";
 import { ServicesSection } from "@/components/ui/services-section";
 import { PortfolioSection } from "@/components/ui/portfolio-section";
-import { FinalCTASection } from "@/components/ui/final-cta-section";
 import { HoverFooter } from "@/components/ui/hover-footer";
 import { colorClasses } from "@/lib/colors";
 
 const navigationItems = [
   { title: "SOLUTIONS", href: "#" },
   { title: "SERVICES", href: "#services" },
-  { title: "PORTFOLIO", href: "#portfolio" },
+  { title: "INSIGHTS", href: "#" },
   { title: "CONTACT", href: "#contact" },
 ];
 
@@ -87,24 +87,22 @@ export function MynaHero() {
         <div className="relative">
           <HeroGeometric 
             badge="Falzin"
-            title1="Stop Wasting Time on"
-            title2="Manual Processes"
-            subtitle="Your business deserves intelligent systems that work for you, not the other way around."
-            description="We build powerful websites, mobile apps, and ERP solutions that save you time, increase revenue, and give you back control of your business."
+            title1="YOUR BUSINESS SHOULDN'T RUN ON"
+            title2="MANUAL EFFORT"
           />
+        </div>
+
+        <div id="value-proposition">
+          <ValuePropositionSection />
         </div>
 
         <div id="services">
           <ServicesSection />
         </div>
 
-        
-
         <div id="portfolio">
           <PortfolioSection />
         </div>
-
-        <FinalCTASection />
         
         <div id="contact">
           <HoverFooter />

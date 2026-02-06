@@ -1,107 +1,52 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AnimatedTabs } from "@/components/ui/animated-tabs";
-
 import { colors } from "@/lib/colors";
 import { ExternalLink } from "lucide-react";
 
-const portfolioTabs = [
+const portfolioProjects = [
   {
-    id: "web-apps",
-    label: "Web Applications",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full h-full">
-        <img
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-          alt="Web Application Dashboard"
-          className="rounded-lg w-full h-64 object-cover shadow-2xl border-none"
-        />
-        <div className="flex flex-col gap-y-3">
-          <h2 className="text-3xl font-bold mb-0 mt-0 !m-0 font-mono" style={{ color: colors.primary[100] }}>
-            Enterprise Dashboards
-          </h2>
-          <p className="text-sm mt-0" style={{ color: `${colors.primary[100]}D9` }}>
-            Custom-built analytics platforms that transform complex data into actionable insights. 
-            Our web applications feature real-time monitoring, advanced reporting, and intuitive interfaces 
-            designed to streamline decision-making processes.
-          </p>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            style={{ color: colors.accent[100] }}
-          >
-            View Case Study <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-    ),
+    id: "bayt",
+    title: "BAYT",
+    category: "Full Stack WebApp",
+    description:
+      "BAYT is a UAE-based service marketplace that connects building owners with verified local service providers through auctions or direct quotations, with secure payments and end-to-end job tracking.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    links: [
+      { label: "Building Owner Portal", url: "https://bayt-bo-frontend.vercel.app/" },
+      { label: "Service Provider Portal", url: "https://bayt-sp-frontend.vercel.app/" }
+    ],
+    gradient: "from-indigo-500/20 to-purple-500/20"
   },
   {
-    id: "mobile-apps",
-    label: "Mobile Apps",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full h-full">
-        <img
-          src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2574&auto=format&fit=crop"
-          alt="Mobile Application"
-          className="rounded-lg w-full h-64 object-cover shadow-2xl border-none"
-        />
-        <div className="flex flex-col gap-y-3">
-          <h2 className="text-3xl font-bold mb-0 mt-0 !m-0 font-mono" style={{ color: colors.primary[100] }}>
-            iOS & Android Solutions
-          </h2>
-          <p className="text-sm mt-0" style={{ color: `${colors.primary[100]}D9` }}>
-            Native and cross-platform mobile applications that deliver seamless user experiences. 
-            From e-commerce to productivity tools, we build apps that engage users and drive business growth 
-            across all mobile platforms.
-          </p>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            style={{ color: colors.accent[100] }}
-          >
-            View Case Study <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-    ),
+    id: "mct",
+    title: "Muslimah Charity Trust",
+    category: "Charity Website",
+    description:
+      "A charity website using Google Apps Script and Sheets to manage cases and media, with Razorpay integration for online donations.",
+    image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2670&auto=format&fit=crop",
+    links: [
+      { label: "Visit Website", url: "https://www.muslimahcharitytrust.org/" }
+    ],
+    gradient: "from-emerald-500/20 to-teal-500/20"
   },
   {
-    id: "erp-systems",
-    label: "ERP Systems",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full h-full">
-        <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
-          alt="ERP System"
-          className="rounded-lg w-full h-64 object-cover shadow-2xl border-none"
-        />
-        <div className="flex flex-col gap-y-3">
-          <h2 className="text-3xl font-bold mb-0 mt-0 !m-0 font-mono" style={{ color: colors.primary[100] }}>
-            Custom ERP Solutions
-          </h2>
-          <p className="text-sm mt-0" style={{ color: `${colors.primary[100]}D9` }}>
-            Comprehensive enterprise resource planning systems tailored to your unique workflows. 
-            Our ERP implementations integrate inventory management, financial tracking, HR systems, 
-            and more into one unified platform that scales with your business.
-          </p>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            style={{ color: colors.accent[100] }}
-          >
-            View Case Study <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
-    ),
-  },
+    id: "cruiseoncars",
+    title: "CruiseOnCars",
+    category: "Car Rental Platform",
+    description:
+      "Car rental platform that checks vehicle availability, captures inquiries, and generates price quotations based on rental dates and duration.",
+    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2670&auto=format&fit=crop",
+    links: [
+      { label: "Visit Website", url: "https://cruiseoncars.com" }
+    ],
+    gradient: "from-blue-500/20 to-cyan-500/20"
+  }
 ];
 
 export function PortfolioSection() {
   return (
-    <section className="py-24 relative" style={{ backgroundColor: colors.primary[50] }}>
+    <section className="py-24 relative" style={{ backgroundColor: colors.primary[100] }}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,23 +55,94 @@ export function PortfolioSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-serif" style={{ color: colors.primary[500] }}>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-mono" style={{ color: colors.primary[500] }}>
             Portfolio
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: colors.primary[400] }}>
-            Explore projects that showcase our expertise in delivering exceptional digital solutions.
+            Real projects delivering real results for our clients
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-6xl mx-auto"
-        >
-          <AnimatedTabs tabs={portfolioTabs} defaultTab="web-apps" />
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {portfolioProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-2xl"
+              style={{
+                backgroundColor: colors.primary[50],
+                border: `1px solid ${colors.primary[300]}`,
+              }}
+            >
+              {/* Background gradient */}
+              <div 
+                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
+                style={{ mixBlendMode: "multiply" }}
+              />
+
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="relative p-6 space-y-4">
+                <div>
+                  <div 
+                    className="text-sm font-mono mb-2"
+                    style={{ color: colors.accent[100] }}
+                  >
+                    {project.category}
+                  </div>
+                  <h3 
+                    className="text-2xl font-bold mb-3 font-mono"
+                    style={{ color: colors.primary[500] }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p 
+                    className="text-sm leading-relaxed"
+                    style={{ color: colors.primary[400] }}
+                  >
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Links */}
+                <div className="space-y-2 pt-4">
+                  {project.links.map((link, linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:underline"
+                      style={{ color: colors.accent[100] }}
+                    >
+                      {link.label} <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Hover border effect */}
+              <div 
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  border: `2px solid ${colors.accent[100]}`,
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

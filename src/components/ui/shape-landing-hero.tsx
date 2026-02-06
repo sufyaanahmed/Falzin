@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle, ArrowRight } from "lucide-react";
+import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { colors } from "@/lib/colors";
 
 function ElegantShape({
     className,
@@ -73,17 +71,13 @@ function ElegantShape({
 }
 
 function HeroGeometric({
-    badge = "Falzin",
-    title1 = "Stop Wasting Time on Manual Processes",
-    title2 = "",
-    subtitle = "Your business deserves intelligent systems that run smoothly — not endless spreadsheets and repetitive tasks.",
-    description = "We build powerful websites, mobile apps, custom software, and tailored ERP solutions that automate operations, boost efficiency, and accelerate growth.",
+    badge = "Design Collective",
+    title1 = "Elevate Your Digital Vision",
+    title2 = "Crafting Exceptional Websites",
 }: {
     badge?: string;
     title1?: string;
     title2?: string;
-    subtitle?: string;
-    description?: string;
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -150,21 +144,16 @@ function HeroGeometric({
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
-                <div className="max-w-4xl mx-auto text-center">
+                <div className="max-w-3xl mx-auto text-center">
                     <motion.div
                         custom={0}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-8 md:mb-12"
-                        style={{
-                            backgroundColor: `${colors.primary[400]}14`,
-                            borderWidth: '1px',
-                            borderColor: `${colors.primary[400]}26`
-                        }}
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#002962]/[0.08] border border-[#002962]/[0.15] mb-8 md:mb-12"
                     >
-                        <Circle className="h-2 w-2" style={{ fill: `${colors.accent[100]}CC` }} />
-                        <span className="text-sm tracking-wide" style={{ color: `${colors.primary[400]}99` }}>
+                        <Circle className="h-2 w-2 fill-[#ff002b]/80" />
+                        <span className="text-sm text-[#002962]/60 tracking-wide">
                             {badge}
                         </span>
                     </motion.div>
@@ -175,28 +164,18 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span 
-                                className="bg-clip-text text-transparent bg-gradient-to-b"
-                                style={{
-                                    backgroundImage: `linear-gradient(to bottom, ${colors.primary[400]}, ${colors.primary[400]}CC)`
-                                }}
-                            >
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#002962] to-[#002962]/80">
                                 {title1}
                             </span>
-                            {title2 && (
-                                <>
-                                    <br />
-                                    <span
-                                        className="bg-clip-text text-transparent"
-                                        style={{
-                                            backgroundImage: `linear-gradient(to right, ${colors.primary[300]}, ${colors.accent[100]}, ${colors.accent[200]})`
-                                        }}
-                                    >
-                                        {title2}
-                                    </span>
-                                </>
-                            )}
+                            <br />
+                            <span
+                                className={cn(
+                                    "bg-clip-text text-transparent bg-gradient-to-r from-[#004e89] via-[#ff002b] to-[#c00021]"
+                                )}
+                            >
+                                {title2}
+                            </span>
                         </h1>
                     </motion.div>
 
@@ -206,43 +185,15 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-lg sm:text-xl md:text-2xl mb-4 leading-relaxed font-medium max-w-3xl mx-auto px-4" style={{ color: `${colors.primary[400]}E6` }}>
-                            {subtitle}
+                        <p className="text-base sm:text-lg md:text-xl text-[#002962]/60 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
+                            Crafting exceptional digital experiences through
+                            innovative design and cutting-edge technology.
                         </p>
-                        <p className="text-base sm:text-lg md:text-xl mb-8 leading-relaxed max-w-3xl mx-auto px-4" style={{ color: `${colors.primary[400]}99` }}>
-                            {description}
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        custom={3}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                        <Button
-                            size="lg"
-                            className="text-white rounded-none font-mono text-base px-8 py-6 transition-all duration-300"
-                            style={{ 
-                                backgroundColor: colors.accent[100],
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = colors.accent[200];
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.backgroundColor = colors.accent[100];
-                            }}
-                        >
-                            Get Your Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
                     </motion.div>
                 </div>
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t pointer-events-none" style={{
-                backgroundImage: `linear-gradient(to top, ${colors.primary[50]}, transparent, ${colors.primary[50]}CC)`
-            }} />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#f5f5f5] via-transparent to-[#f5f5f5]/80 pointer-events-none" />
         </div>
     );
 }

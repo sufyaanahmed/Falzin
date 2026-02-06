@@ -1,46 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Code, Database, Sparkles, BarChart } from "lucide-react";
-import { colors } from "@/lib/colors";
-import { GradientCard } from "@/components/ui/gradient-card";
+import { Globe, Cpu, Sparkles, BarChart3, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { colorClasses } from "@/lib/colors";
 
 const services = [
   {
     icon: Globe,
-    title: "Websites & Web Apps",
-    description: "Modern, responsive websites and powerful web applications built with cutting-edge technologies to deliver exceptional user experiences.",
+    title: "Websites & Apps",
+    description:
+      "Modern, responsive platforms designed to delight users and scale with your business.",
   },
   {
-    icon: Smartphone,
-    title: "iOS & Android Apps",
-    description: "Native and cross-platform mobile applications that engage users and drive business growth across all devices.",
-  },
-  {
-    icon: Code,
-    title: "Custom Software",
-    description: "Tailored software solutions designed to solve your unique business challenges and streamline operations.",
-  },
-  {
-    icon: Database,
-    title: "ERP Solutions",
-    description: "Comprehensive enterprise resource planning systems that unify your business processes into one intelligent platform.",
+    icon: Cpu,
+    title: "Custom Software Solutions",
+    description:
+      "Tailored systems that automate processes and integrate seamlessly.",
   },
   {
     icon: Sparkles,
-    title: "AI & Automation",
-    description: "Intelligent automation solutions that eliminate repetitive tasks and unlock unprecedented efficiency gains.",
+    title: "AI Automation",
+    description:
+      "Smart systems that reduce manual effort and increase operational efficiency.",
   },
   {
-    icon: BarChart,
-    title: "Data Analytics",
-    description: "Transform raw data into actionable insights with custom analytics dashboards and reporting tools.",
+    icon: BarChart3,
+    title: "Data Insights & Analytics",
+    description:
+      "Actionable insights that drive smarter decisions and measurable growth.",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: colors.primary[50] }}>
+    <section className={`${colorClasses.bg.primary} py-24`}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,15 +43,15 @@ export function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-mono" style={{ color: colors.primary[400] }}>
-            Our Services
+          <h2 className={`text-4xl md:text-5xl font-bold ${colorClasses.text.primary} mb-4 font-mono`}>
+            From Idea to Digital Reality
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: `${colors.primary[400]}99` }}>
-            Comprehensive technology solutions to transform your business operations.
+          <p className={`${colorClasses.text.secondary} text-lg max-w-2xl mx-auto`}>
+            We transform your vision into powerful digital solutions that drive growth.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -65,18 +59,40 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`${colorClasses.bg.card} ${colorClasses.border.primary} border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group`}
             >
-              <GradientCard
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                link="#contact"
-              />
+              <div className="mb-6">
+                <div className={`inline-flex p-4 rounded-xl bg-[#004e89]/10 group-hover:bg-[#ff002b]/10 transition-colors duration-300`}>
+                  <service.icon className={`h-8 w-8 text-[#004e89] group-hover:text-[#ff002b] transition-colors duration-300`} />
+                </div>
+              </div>
+              
+              <h3 className={`text-xl font-bold ${colorClasses.text.primary} mb-3 font-mono`}>
+                {service.title}
+              </h3>
+              
+              <p className={`${colorClasses.text.secondary} text-sm leading-relaxed`}>
+                {service.description}
+              </p>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-16"
+        >
+          <Button
+            size="lg"
+            className={`${colorClasses.bg.accent} ${colorClasses.bg.accentHover} text-white rounded-none font-mono`}
+          >
+            Explore Our Services <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
 }
-

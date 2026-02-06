@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
@@ -12,7 +12,6 @@ import {
   Linkedin,
   Globe,
 } from "lucide-react";
-import { colors } from "@/lib/colors";
 
 export const TextHoverEffect = ({
   text,
@@ -180,17 +179,17 @@ export function HoverFooter() {
   // Contact info data
   const contactInfo = [
     {
-      icon: <Mail size={18} style={{ color: colors.primary[300] }} />,
+      icon: <Mail size={18} className="text-[#004e89]" />,
       text: "hello@falzin.com",
       href: "mailto:hello@falzin.com",
     },
     {
-      icon: <Phone size={18} style={{ color: colors.primary[300] }} />,
+      icon: <Phone size={18} className="text-[#004e89]" />,
       text: "+1 (555) 123-4567",
       href: "tel:+15551234567",
     },
     {
-      icon: <MapPin size={18} style={{ color: colors.primary[300] }} />,
+      icon: <MapPin size={18} className="text-[#004e89]" />,
       text: "United States",
     },
   ];
@@ -205,22 +204,18 @@ export function HoverFooter() {
   ];
 
   return (
-    <footer className="relative h-fit rounded-3xl overflow-hidden m-8" style={{ 
-      backgroundColor: `${colors.primary[50]}CC`,
-      borderWidth: '1px',
-      borderColor: `${colors.primary[400]}1A`
-    }}>
+    <footer className="bg-white/80 relative h-fit rounded-3xl overflow-hidden m-8 border border-[#002962]/10">
       <div className="max-w-7xl mx-auto p-14 z-40 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16 pb-12">
           {/* Brand section */}
           <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-3xl font-extrabold" style={{ color: colors.accent[100] }}>
+              <span className="text-[#ff002b] text-3xl font-extrabold">
                 ♥
               </span>
-              <span className="text-3xl font-bold" style={{ color: colors.primary[400] }}>Falzin</span>
+              <span className="text-[#002962] text-3xl font-bold">Falzin</span>
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: `${colors.primary[400]}B3` }}>
+            <p className="text-sm leading-relaxed text-[#002962]/70">
               Building intelligent technology that simplifies operations and drives growth.
             </p>
           </div>
@@ -228,7 +223,7 @@ export function HoverFooter() {
           {/* Footer link sections */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-lg font-semibold mb-6" style={{ color: colors.primary[400] }}>
+              <h4 className="text-[#002962] text-lg font-semibold mb-6">
                 {section.title}
               </h4>
               <ul className="space-y-3">
@@ -236,19 +231,12 @@ export function HoverFooter() {
                   <li key={link.label} className="relative">
                     <a
                       href={link.href}
-                      className="transition-colors"
-                      style={{ color: `${colors.primary[400]}B3` }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = colors.accent[100];
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = `${colors.primary[400]}B3`;
-                      }}
+                      className="text-[#002962]/70 hover:text-[#ff002b] transition-colors"
                     >
                       {link.label}
                     </a>
                     {link.pulse && (
-                      <span className="absolute top-0 right-[-10px] w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: colors.accent[100] }}></span>
+                      <span className="absolute top-0 right-[-10px] w-2 h-2 rounded-full bg-[#ff002b] animate-pulse"></span>
                     )}
                   </li>
                 ))}
@@ -258,7 +246,7 @@ export function HoverFooter() {
 
           {/* Contact section */}
           <div>
-            <h4 className="text-lg font-semibold mb-6" style={{ color: colors.primary[400] }}>
+            <h4 className="text-[#002962] text-lg font-semibold mb-6">
               Contact Us
             </h4>
             <ul className="space-y-4">
@@ -268,19 +256,12 @@ export function HoverFooter() {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="transition-colors text-sm"
-                      style={{ color: `${colors.primary[400]}B3` }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = colors.accent[100];
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = `${colors.primary[400]}B3`;
-                      }}
+                      className="text-[#002962]/70 hover:text-[#ff002b] transition-colors text-sm"
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span className="text-sm" style={{ color: `${colors.primary[400]}B3` }}>
+                    <span className="text-[#002962]/70 hover:text-[#ff002b] transition-colors text-sm">
                       {item.text}
                     </span>
                   )}
@@ -290,25 +271,18 @@ export function HoverFooter() {
           </div>
         </div>
 
-        <hr className="my-8" style={{ borderTopWidth: '1px', borderColor: `${colors.primary[400]}33` }} />
+        <hr className="border-t border-[#002962]/20 my-8" />
 
         {/* Footer bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
           {/* Social icons */}
-          <div className="flex space-x-6" style={{ color: `${colors.primary[400]}99` }}>
+          <div className="flex space-x-6 text-[#002962]/60">
             {socialLinks.map(({ icon, label, href }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className="transition-colors"
-                style={{ color: `${colors.primary[400]}99` }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = colors.accent[100];
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = `${colors.primary[400]}99`;
-                }}
+                className="hover:text-[#ff002b] transition-colors"
               >
                 {icon}
               </a>
@@ -316,7 +290,7 @@ export function HoverFooter() {
           </div>
 
           {/* Copyright */}
-          <p className="text-center md:text-left" style={{ color: `${colors.primary[400]}B3` }}>
+          <p className="text-center md:text-left text-[#002962]/70">
             &copy; {new Date().getFullYear()} Falzin. All rights reserved.
           </p>
         </div>
