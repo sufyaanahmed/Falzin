@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Globe, Smartphone, Code, Database, Sparkles, BarChart } from "lucide-react";
 import { colors } from "@/lib/colors";
 import { GradientCard } from "@/components/ui/gradient-card";
-import { FlipLinks } from "@/components/ui/flip-links";
 
 const services = [
   {
@@ -42,21 +41,7 @@ const services = [
 export function ServicesSection() {
   return (
     <section className="py-24 relative overflow-hidden" style={{ backgroundColor: colors.primary[50] }}>
-      {/* Flip Links Background - positioned on the left */}
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10 hidden xl:block opacity-20 pointer-events-none">
-        <div className="scale-150">
-          <FlipLinks />
-        </div>
-      </div>
-
-      {/* Flip Links Background - positioned on the right */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden xl:block opacity-20 pointer-events-none">
-        <div className="scale-150">
-          <FlipLinks />
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 relative z-20">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

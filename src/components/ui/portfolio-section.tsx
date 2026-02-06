@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AnimatedTabs } from "@/components/ui/animated-tabs";
+
 import { colors } from "@/lib/colors";
 import { ExternalLink } from "lucide-react";
 
@@ -109,10 +110,10 @@ export function PortfolioSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-mono" style={{ color: colors.primary[400] }}>
-            Our Work
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-serif" style={{ color: colors.primary[500] }}>
+            Portfolio
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: `${colors.primary[400]}99` }}>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: colors.primary[400] }}>
             Explore projects that showcase our expertise in delivering exceptional digital solutions.
           </p>
         </motion.div>

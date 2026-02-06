@@ -41,8 +41,8 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
       className="relative rounded-3xl overflow-hidden w-full h-full min-h-[380px]"
       style={{
         transformStyle: "preserve-3d",
-        backgroundColor: colors.primary[500],
-        boxShadow: `0 -10px 100px 10px ${colors.primary[300]}40, 0 0 10px 0 rgba(0, 0, 0, 0.5)`,
+        backgroundColor: colors.primary[50],
+        boxShadow: `0 -10px 100px 10px ${colors.accent[100]}20, 0 0 10px 0 rgba(0, 0, 0, 0.1)`,
       }}
       initial={{ y: 0 }}
       animate={{
@@ -64,7 +64,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
       <motion.div
         className="absolute inset-0 z-35 pointer-events-none"
         style={{
-          background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.05) 100%)",
+          background: "linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.3) 100%)",
           backdropFilter: "blur(2px)",
         }}
         animate={{
@@ -76,11 +76,11 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
         transition={{ duration: 0.4, ease: "easeOut" }}
       />
 
-      {/* Dark background */}
+      {/* Light background */}
       <motion.div
         className="absolute inset-0 z-0"
         style={{
-          background: `linear-gradient(180deg, ${colors.primary[500]} 0%, ${colors.primary[500]} 70%)`,
+          background: `linear-gradient(180deg, ${colors.primary[50]} 0%, ${colors.primary[100]} 70%)`,
         }}
         animate={{ z: -1 }}
       />
@@ -94,13 +94,13 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
         animate={{ z: -0.5 }}
       />
 
-      {/* Gradient glow effect */}
+      {/* Gradient glow effect with accent colors */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-2/3 z-20"
         style={{
           background: `
-            radial-gradient(ellipse at bottom right, ${colors.accent[100]}B3 -10%, transparent 70%),
-            radial-gradient(ellipse at bottom left, ${colors.primary[200]}B3 -10%, transparent 70%)
+            radial-gradient(ellipse at bottom right, ${colors.accent[100]}60 -10%, transparent 70%),
+            radial-gradient(ellipse at bottom left, ${colors.accent[200]}60 -10%, transparent 70%)
           `,
           filter: "blur(40px)",
         }}
@@ -112,11 +112,11 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
         transition={{ duration: 0.4, ease: "easeOut" }}
       />
 
-      {/* Central glow */}
+      {/* Central accent glow */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-2/3 z-21"
         style={{
-          background: `radial-gradient(circle at bottom center, ${colors.accent[200]}B3 -20%, transparent 60%)`,
+          background: `radial-gradient(circle at bottom center, ${colors.accent[100]}60 -20%, transparent 60%)`,
           filter: "blur(45px)",
         }}
         animate={{
@@ -152,7 +152,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
         <motion.div
           className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
           style={{
-            background: `linear-gradient(225deg, ${colors.primary[400]} 0%, ${colors.primary[500]} 100%)`,
+            background: `linear-gradient(225deg, ${colors.accent[100]} 0%, ${colors.accent[200]} 100%)`,
             position: "relative",
             overflow: "hidden"
           }}
@@ -180,7 +180,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
           />
 
           <div className="flex items-center justify-center w-full h-full relative z-10">
-            <Icon className="w-6 h-6" style={{ color: colors.primary[100] }} />
+            <Icon className="w-6 h-6" style={{ color: colors.primary[50] }} />
           </div>
         </motion.div>
 
@@ -199,7 +199,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
             style={{
               letterSpacing: "-0.01em",
               lineHeight: 1.2,
-              color: colors.primary[100]
+              color: colors.primary[500]
             }}
             initial={{ filter: "blur(3px)", opacity: 0.7 }}
             animate={{
@@ -217,7 +217,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
             style={{
               lineHeight: 1.5,
               fontWeight: 350,
-              color: `${colors.primary[100]}D9`
+              color: colors.primary[400]
             }}
             initial={{ filter: "blur(3px)", opacity: 0.7 }}
             animate={{
@@ -234,7 +234,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
           <motion.a
             href={link}
             className="inline-flex items-center text-sm font-medium group font-mono"
-            style={{ color: colors.primary[100] }}
+            style={{ color: colors.accent[100] }}
             initial={{ filter: "blur(3px)", opacity: 0.7 }}
             animate={{
               filter: "blur(0px)",
@@ -263,7 +263,7 @@ export const GradientCard = ({ icon: Icon, title, description, link = "#" }: Gra
             >
               <path
                 d="M1 8H15M15 8L8 1M15 8L8 15"
-                stroke="white"
+                stroke="currentColor"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"

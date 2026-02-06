@@ -9,7 +9,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { ServicesSection } from "@/components/ui/services-section";
-import { ValuePropositionSection } from "@/components/ui/value-proposition-section";
 import { PortfolioSection } from "@/components/ui/portfolio-section";
 import { FinalCTASection } from "@/components/ui/final-cta-section";
 import { HoverFooter } from "@/components/ui/hover-footer";
@@ -99,7 +98,7 @@ export function MynaHero() {
           <ServicesSection />
         </div>
 
-        <ValuePropositionSection />
+        
 
         <div id="portfolio">
           <PortfolioSection />

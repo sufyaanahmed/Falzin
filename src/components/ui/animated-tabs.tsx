@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { colors } from "@/lib/colors";
 
 interface Tab {
   id: string;
@@ -28,7 +29,7 @@ const AnimatedTabs = ({
   return (
     <div className={cn("w-full flex flex-col gap-y-4", className)}>
       <div className="flex gap-2 flex-wrap p-1 rounded-xl" style={{
-        backgroundColor: `${tabs[0] ? '#00043a' : '#00043a'}98`,
+        backgroundColor: `${colors.primary[500]}98`,
         backdropFilter: 'blur(10px)'
       }}>
         {tabs.map((tab) => (
@@ -36,14 +37,15 @@ const AnimatedTabs = ({
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={cn(
-              "relative px-4 py-2 text-sm font-medium rounded-lg text-white outline-none transition-colors font-mono"
+              "relative px-4 py-2 text-sm font-medium rounded-lg outline-none transition-colors font-mono"
             )}
+            style={{ color: colors.primary[100] }}
           >
             {activeTab === tab.id && (
               <motion.div
                 layoutId="active-tab"
                 className="absolute inset-0 shadow-lg backdrop-blur-sm !rounded-lg"
-                style={{ backgroundColor: `${tabs[0] ? '#002962' : '#002962'}d1` }}
+                style={{ backgroundColor: `${colors.primary[400]}d1` }}
                 transition={{ type: "spring", duration: 0.6 }}
               />
             )}
@@ -52,10 +54,11 @@ const AnimatedTabs = ({
         ))}
       </div>
 
-      <div className="p-6 text-white rounded-xl border min-h-80 h-full shadow-xl" style={{
-        backgroundColor: `${tabs[0] ? '#00043a' : '#00043a'}98`,
+      <div className="p-6 rounded-xl border min-h-80 h-full shadow-xl" style={{
+        backgroundColor: `${colors.primary[500]}98`,
         backdropFilter: 'blur(10px)',
-        borderColor: `${tabs[0] ? '#002962' : '#002962'}33`
+        borderColor: `${colors.primary[400]}33`,
+        color: colors.primary[100]
       }}>
         {tabs.map(
           (tab) =>

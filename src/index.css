@@ -63,7 +63,37 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Scroll Snap Sections */
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.scroll-panel {
+  scroll-snap-align: start;
+}
+
+/* Scroll-triggered animation states */
+.panel-icon,
+.panel-title,
+.panel-subtitle,
+.panel-description {
+  opacity: 0;
+}
+
+.is-visible .panel-icon,
+.is-visible .panel-title,
+.is-visible .panel-subtitle,
+.is-visible .panel-description {
+  opacity: 1;
+  transition: opacity 0.6s ease-out;
 }
