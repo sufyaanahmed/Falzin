@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { HeroGeometric } from "@/components/ui/hero-geometric";
 import { ValuePropositionSection } from "@/components/ui/value-proposition-section";
 import { ServicesSection } from "@/components/ui/services-section";
 import { PortfolioSection } from "@/components/ui/portfolio-section";
@@ -21,7 +21,7 @@ const navigationItems = [
   { title: "CONTACT", href: "#contact" },
 ];
 
-export function MynaHero() {
+export function MainLayout() {
 
   return (
     <div className={`relative min-h-screen ${colorClasses.bg.primary} overflow-hidden`}>

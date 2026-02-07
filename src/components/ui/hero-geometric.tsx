@@ -93,10 +93,17 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#f5f5f5]">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#f5f5f5]" style={{ perspective: "2000px" }}>
             <div className="absolute inset-0 bg-gradient-to-br from-[#407ba7]/[0.05] via-transparent to-[#ff002b]/[0.05] blur-3xl" />
 
-            <div className="absolute inset-0 overflow-hidden">
+            {/* Additional depth layers for immersive effect */}
+            <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-[#002962]/5 to-transparent"
+                animate={{ opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+
+            <div className="absolute inset-0 overflow-hidden" style={{ transformStyle: "preserve-3d" }}>
                 <ElegantShape
                     delay={0.3}
                     width={600}
@@ -141,9 +148,19 @@ function HeroGeometric({
                     gradient="from-[#002962]/[0.15]"
                     className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
                 />
+
+                {/* Additional micro shapes for depth */}
+                <ElegantShape
+                    delay={0.8}
+                    width={100}
+                    height={30}
+                    rotate={15}
+                    gradient="from-[#407ba7]/[0.1]"
+                    className="right-[8%] bottom-[20%]"
+                />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6">
+            <div className="relative z-10 container mx-auto px-4 md:px-6" style={{ transformStyle: "preserve-3d" }}>
                 <div className="max-w-3xl mx-auto text-center">
                     <motion.div
                         custom={0}
@@ -151,6 +168,9 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#002962]/[0.08] border border-[#002962]/[0.15] mb-8 md:mb-12"
+                        style={{ transform: "translateZ(30px)" }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,41,98,0.2)" }}
+                        transition={{ duration: 0.3 }}
                     >
                         <Circle className="h-2 w-2 fill-[#ff002b]/80" />
                         <span className="text-sm text-[#002962]/60 tracking-wide">
@@ -163,19 +183,29 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        style={{ transformStyle: "preserve-3d" }}
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight" style={{ transform: "translateZ(50px)" }}>
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#002962] to-[#002962]/80">
                                 {title1}
                             </span>
                             <br />
-                            <span
+                            <motion.span
                                 className={cn(
                                     "bg-clip-text text-transparent bg-gradient-to-r from-[#004e89] via-[#ff002b] to-[#c00021]"
                                 )}
+                                animate={{
+                                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                                }}
+                                transition={{
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    ease: "linear"
+                                }}
+                                style={{ backgroundSize: "200% 200%" }}
                             >
                                 {title2}
-                            </span>
+                            </motion.span>
                         </h1>
                     </motion.div>
 
@@ -184,6 +214,7 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        style={{ transform: "translateZ(40px)" }}
                     >
                         <p className="text-base sm:text-lg md:text-xl text-[#002962]/60 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
                             Crafting exceptional digital experiences through
@@ -193,7 +224,13 @@ function HeroGeometric({
                 </div>
             </div>
 
+            {/* Enhanced gradient overlays for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#f5f5f5] via-transparent to-[#f5f5f5]/80 pointer-events-none" />
+            <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-[#f5f5f5]/50 via-transparent to-[#f5f5f5]/50 pointer-events-none"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            />
         </div>
     );
 }

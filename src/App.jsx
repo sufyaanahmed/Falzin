@@ -1,7 +1,7 @@
-import { MynaHero } from "@/components/ui/myna-hero";
+import { MainLayout } from "@/components/ui/main-layout";
 
 function App() {
-  return <MynaHero />;
+  return <MainLayout />;
 }
 
 export default App

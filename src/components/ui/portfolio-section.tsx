@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { colors } from "@/lib/colors";
 import { ExternalLink } from "lucide-react";
 
@@ -46,55 +47,125 @@ const portfolioProjects = [
 
 export function PortfolioSection() {
   return (
-    <section className="py-24 relative" style={{ backgroundColor: colors.primary[100] }}>
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: colors.primary[100], perspective: "2000px" }}>
+      {/* Parallax background layers */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div 
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/5 to-transparent"
+          animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-tl from-purple-500/5 to-transparent"
+          animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, rotateX: -10 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
+          style={{ transformStyle: "preserve-3d" }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-mono" style={{ color: colors.primary[500] }}>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-mono" style={{ color: colors.primary[500], transform: "translateZ(20px)" }}>
             Portfolio
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: colors.primary[400] }}>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: colors.primary[400], transform: "translateZ(10px)" }}>
             Real projects delivering real results for our clients
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {portfolioProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl"
-              style={{
-                backgroundColor: colors.primary[50],
-                border: `1px solid ${colors.primary[300]}`,
-              }}
-            >
-              {/* Background gradient */}
-              <div 
-                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
-                style={{ mixBlendMode: "multiply" }}
+          {portfolioProjects.map((project, index) => {
+            const [isHovered, setIsHovered] = useState(false);
+            const mouseX = useMotionValue(0);
+            const mouseY = useMotionValue(0);
+            
+            const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), { stiffness: 300, damping: 30 });
+            const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), { stiffness: 300, damping: 30 });
+
+            const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              mouseX.set((e.clientX - centerX) / rect.width);
+              mouseY.set((e.clientY - centerY) / rect.height);
+            };
+
+            const handleMouseLeave = () => {
+              mouseX.set(0);
+              mouseY.set(0);
+              setIsHovered(false);
+            };
+
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 60, rotateX: -20 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: index * 0.15 }}
+                onMouseMove={handleMouseMove}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  rotateX,
+                  rotateY,
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px"
+                }}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer"
+              >
+                {/* Main card container with 3D depth */}
+                <div
+                  className="relative"
+                  style={{
+                    backgroundColor: colors.primary[50],
+                    border: `1px solid ${colors.primary[300]}`,
+                    boxShadow: isHovered 
+                      ? `0 30px 60px -15px rgba(0,0,0,0.4), 0 0 0 1px ${colors.accent[100]}40`
+                      : "0 10px 30px -10px rgba(0,0,0,0.2)",
+                    transition: "box-shadow 0.5s ease",
+                    borderRadius: "1rem"
+                  }}
+                >
+              {/* Background gradient with 3D depth */}
+              <motion.div 
+                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} transition-opacity duration-500`}
+                style={{ 
+                  mixBlendMode: "multiply",
+                  opacity: isHovered ? 0.4 : 0,
+                  transform: "translateZ(-10px)"
+                }}
               />
 
-              {/* Image */}
+              {/* Glossy overlay */}
+              <div 
+                className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent transition-opacity duration-500"
+                style={{ opacity: isHovered ? 1 : 0 }}
+              />
+
+              {/* Image with parallax depth */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
+                  style={{
+                    scale: isHovered ? 1.15 : 1,
+                    transform: "translateZ(30px)"
+                  }}
+                  transition={{ duration: 0.6 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" style={{ transform: "translateZ(35px)" }} />
               </div>
 
-              {/* Content */}
-              <div className="relative p-6 space-y-4">
+              {/* Content with layered depth */}
+              <div className="relative p-6 space-y-4" style={{ transform: "translateZ(40px)" }}>
                 <div>
                   <div 
                     className="text-sm font-mono mb-2"
@@ -116,32 +187,39 @@ export function PortfolioSection() {
                   </p>
                 </div>
 
-                {/* Links */}
+                {/* Links with micro-interactions */}
                 <div className="space-y-2 pt-4">
                   {project.links.map((link, linkIndex) => (
-                    <a
+                    <motion.a
                       key={linkIndex}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:underline"
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:underline"
                       style={{ color: colors.accent[100] }}
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
                     >
                       {link.label} <ExternalLink className="w-4 h-4" />
-                    </a>
+                    </motion.a>
                   ))}
                 </div>
               </div>
 
-              {/* Hover border effect */}
-              <div 
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              {/* Animated glow border on hover */}
+              <motion.div 
+                className="absolute inset-0 rounded-2xl pointer-events-none"
                 style={{
                   border: `2px solid ${colors.accent[100]}`,
+                  opacity: isHovered ? 1 : 0,
+                  boxShadow: `0 0 30px ${colors.accent[100]}40`
                 }}
+                transition={{ duration: 0.3 }}
               />
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
