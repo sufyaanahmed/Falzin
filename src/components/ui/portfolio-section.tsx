@@ -135,7 +135,7 @@ export function PortfolioSection() {
                 >
               {/* Background gradient with 3D depth */}
               <motion.div 
-                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} transition-opacity duration-500`}
+                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} transition-opacity duration-500 pointer-events-none`}
                 style={{ 
                   mixBlendMode: "multiply",
                   opacity: isHovered ? 0.4 : 0,
@@ -145,27 +145,12 @@ export function PortfolioSection() {
 
               {/* Glossy overlay */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent transition-opacity duration-500"
+                className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent transition-opacity duration-500 pointer-events-none"
                 style={{ opacity: isHovered ? 1 : 0 }}
               />
 
-              {/* Image with parallax depth */}
-              <div className="relative h-48 overflow-hidden">
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  style={{
-                    scale: isHovered ? 1.15 : 1,
-                    transform: "translateZ(30px)"
-                  }}
-                  transition={{ duration: 0.6 }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" style={{ transform: "translateZ(35px)" }} />
-              </div>
-
               {/* Content with layered depth */}
-              <div className="relative p-6 space-y-4" style={{ transform: "translateZ(40px)" }}>
+              <div className="relative p-8 space-y-4" style={{ transform: "translateZ(40px)" }}>
                 <div>
                   <div 
                     className="text-sm font-mono mb-2"
@@ -188,19 +173,21 @@ export function PortfolioSection() {
                 </div>
 
                 {/* Links with micro-interactions */}
-                <div className="space-y-2 pt-4">
+                <div className="space-y-2 pt-4 relative z-50">
                   {project.links.map((link, linkIndex) => (
                     <motion.a
                       key={linkIndex}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:underline"
-                      style={{ color: colors.accent[100] }}
+                      className="block text-sm font-semibold transition-all hover:underline"
+                      style={{ color: colors.accent[100], position: "relative", zIndex: 100 }}
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {link.label} <ExternalLink className="w-4 h-4" />
+                      <span className="inline-flex items-center gap-2">
+                        {link.label} <ExternalLink className="w-4 h-4" />
+                      </span>
                     </motion.a>
                   ))}
                 </div>

@@ -87,8 +87,8 @@ export function MainLayout() {
         <div className="relative">
           <HeroGeometric 
             badge="Falzin"
-            title1="YOUR BUSINESS SHOULDN'T RUN ON"
-            title2="MANUAL EFFORT"
+            title1="If your business had a face,"
+            title2="it’d be your website."
           />
         </div>
 

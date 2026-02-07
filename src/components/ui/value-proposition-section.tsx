@@ -151,8 +151,8 @@ export function ValuePropositionSection() {
                       {/* Icon with 3D depth */}
                       <motion.div
                         className="mb-6"
-                        whileHover={{ rotateZ: 360, scale: 1.1 }}
-                        transition={{ duration: 0.8 }}
+                        whileHover={{ rotateZ: 15, scale: 1.05 }}
+                        transition={{ duration: 0.4 }}
                       >
                         <div 
                           className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-2xl"
