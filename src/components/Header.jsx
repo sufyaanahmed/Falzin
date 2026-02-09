@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; 
 import { Link } from 'react-router-dom';
 
 const smoothScrollTo = (id) => {
@@ -17,14 +17,20 @@ export default function Header() {
       className="fixed top-0 w-full z-50 border-b border-primary/10 bg-background-light/80 backdrop-blur-md dark:bg-background-dark/80"
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-sm">
+        
+        <Link 
+            to="/"
+            className="flex items-center gap-3"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+        <div className="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-sm">
             <span className="material-symbols-outlined text-sm">architecture</span>
-          </div>
-          <h2 className="text-xl font-bold tracking-[0.2em] luxury-text-spacing text-primary uppercase">
-            FALZIN
-          </h2>
         </div>
+            <h2 className="text-xl font-bold tracking-[0.2em] luxury-text-spacing text-primary uppercase">
+                FALZIN
+            </h2>
+        </Link>
+
         
         <nav className="hidden md:flex items-center gap-12">
           <Link
