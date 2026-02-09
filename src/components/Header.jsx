@@ -23,9 +23,11 @@ export default function Header() {
             className="flex items-center gap-3"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-        <div className="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-sm">
-            <span className="material-symbols-outlined text-sm">architecture</span>
-        </div>
+            <img 
+                src="/Logo.png" 
+                alt="Falzin Logo" 
+                className="h-10 w-auto object-contain"
+            />
             <h2 className="text-xl font-bold tracking-[0.2em] luxury-text-spacing text-primary uppercase">
                 FALZIN
             </h2>
