@@ -20,7 +20,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-40 bg-background-light">
+    <section id="services" className="py-40 bg-background-light">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

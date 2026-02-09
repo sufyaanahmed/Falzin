@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 export default function Metrics() {
   const metrics = [
-    { value: '120+', label: 'Solutions Deployed' },
-    { value: '$4B+', label: 'Client Revenue Managed' },
+    { value: '5+', label: 'Solutions Deployed' },
+    { value: '200k+', label: 'Client Revenue Managed' },
     { value: '15ms', label: 'Average Latency' },
     { value: '24/7', label: 'Operational Support' }
   ];

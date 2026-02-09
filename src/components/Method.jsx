@@ -29,7 +29,7 @@ export default function Method() {
   ];
 
   return (
-    <section className="py-32 bg-white/30">
+    <section id="method" className="py-32 bg-white/30">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <motion.div

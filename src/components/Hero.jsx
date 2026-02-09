@@ -11,7 +11,7 @@ export default function Hero() {
         <motion.span 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-xs uppercase tracking-[0.4em] font-semibold text-accent-emerald mb-8 block"
         >
           AN ELITE DIGITAL ATELIER
@@ -20,7 +20,7 @@ export default function Hero() {
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="serif-title text-6xl md:text-8xl font-light leading-tight text-primary mb-8"
         >
           Architecting <br />
@@ -29,7 +29,7 @@ export default function Hero() {
         
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}the scroll and animations are still not that smooth
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-lg md:text-xl font-light text-primary/60 max-w-2xl mx-auto mb-12 luxury-text-spacing leading-relaxed"
         >
@@ -40,7 +40,7 @@ export default function Hero() {
           <motion.button 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="px-10 py-4 bg-primary text-white font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-700"
           >
             Request an Invitation
@@ -50,7 +50,7 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.8, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
             className="mt-20 w-48 h-48 relative"
           >
             <div className="absolute inset-0 border border-champagne-gold/20 rotate-45 animate-[pulse_6s_infinite]"></div>

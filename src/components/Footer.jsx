@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="py-20 bg-background-light border-t border-primary/5">
+    <footer id="footer" className="py-20 bg-background-light border-t border-primary/5">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -95,12 +95,12 @@ export default function Footer() {
           className="flex flex-col md:flex-row justify-between items-center border-t border-primary/5 pt-10 gap-6"
         >
           <p className="text-[10px] text-primary/40 uppercase tracking-[0.3em]">
-            © 2024 Falzin Digital Atelier. All Rights Reserved.
+            © 2026 Falzin Digital Atelier. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4 text-primary/40">
             <span className="material-symbols-outlined text-lg">language</span>
             <span className="text-[10px] uppercase tracking-widest">
-              London / New York / Dubai
+              Dubai / Bangalore
             </span>
           </div>
         </motion.div>

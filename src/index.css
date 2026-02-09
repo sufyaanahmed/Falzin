@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  
   body {
     font-family: 'Manrope', sans-serif;
+  }
+  
+  * {
     scroll-behavior: smooth;
   }
 }
