@@ -44,24 +44,18 @@ export default function Header() {
           <a
             className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary transition-colors cursor-pointer"
             onClick={(e) => { e.preventDefault(); smoothScrollTo('method'); }}
-            href="#method"
+            href="method"
           >
             The Method
           </a>
           <a
             className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary transition-colors cursor-pointer"
             onClick={(e) => { e.preventDefault(); smoothScrollTo('services'); }}
-            href="#services"
+            href="services"
           >
-            Case Studies
+            Solutions
           </a>
-          <a
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary transition-colors cursor-pointer"
-            onClick={(e) => { e.preventDefault(); smoothScrollTo('footer'); }}
-            href="#footer"
-          >
-            Journal
-          </a>
+        
         </nav>
         
         <button className="px-6 py-2 bg-primary text-white text-xs font-bold uppercase tracking-widest border border-champagne-gold/40 rounded-sm hover:bg-primary/90 transition-all duration-500">

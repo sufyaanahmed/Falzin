@@ -30,7 +30,7 @@ export default function Expertise() {
     { name: 'Node.js & Python', category: 'Backend' },
     { name: 'PostgreSQL & MongoDB', category: 'Database' },
     { name: 'AWS & Azure', category: 'Cloud' },
-    { name: 'ERPNext', category: 'ERP' },
+    { name: 'Custom ERP Setup', category: 'ERP' },
     { name: 'Docker & Kubernetes', category: 'DevOps' }
   ];
 
