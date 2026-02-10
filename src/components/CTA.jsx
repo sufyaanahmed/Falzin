@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function CTA() {
   return (
     <section className="py-40 bg-primary text-white overflow-hidden relative">
-      <div className="absolute right-0 bottom-0 opacity-10 hidden md:block">
+      <div className="absolute right-24 bottom-0 opacity-10 hidden md:block">
         <span className="serif-title text-[10rem] md:text-[15rem] lg:text-[20rem] leading-none italic select-none">
           Excellence
         </span>

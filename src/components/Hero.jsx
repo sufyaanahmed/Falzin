@@ -46,30 +46,10 @@ export default function Hero() {
             Request an Invitation
           </motion.button>
           
-          {/* Abstract 3D Element */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.8, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-20 w-48 h-48 relative"
-          >
-            <div className="absolute inset-0 border border-champagne-gold/20 rotate-45 animate-[pulse_6s_infinite]"></div>
-            <div className="absolute inset-4 border border-primary/10 -rotate-12"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <img
-                alt="Abstract 3D glass and gold sculpture"
-                className="w-full h-full object-contain"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXIyGoecmdmsvtgV-f9WNGRyaV4W5MOQJyRIAwGtom9M7mg2i88F0l4AQYBHDYdNYo0Zcz-7XI7BRTtB-abGj5FWIgtOom_nNhCJ5LHdZBqo8psUC2bhEx6zhhFG5UxFDsZyj537shNdLrODoKD6AtLF-eIydty9hLjJBUx3OGSm2O7NsvK99sCGfvc5e3BBBKqS4jAcBIa3hObtDdYJb4Wb3bM0fhiOfUdFxPjBPC-OYAC-e143k0WHtgJBSfL86EwCSmVlck-KU"
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/30">
-        <span className="text-[10px] uppercase tracking-widest">Scroll</span>
-        <div className="w-px h-12 bg-primary/20"></div>
-      </div>
+   
     </section>
   );
 }
