@@ -61,10 +61,10 @@ export default function Method() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
               className="relative z-10 pt-10 pb-16 md:pr-8 group hover:bg-white/40 transition-all duration-700 px-4 border-l md:border-l-0 border-primary/10"
             >
               <div className="serif-title text-4xl text-primary mb-12 flex items-center gap-4">

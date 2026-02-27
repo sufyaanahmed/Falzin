@@ -6,14 +6,18 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+    -webkit-overflow-scrolling: touch;
   }
   
   body {
     font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
+
   * {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -29,5 +33,29 @@
   .glass-card {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(8px);
+  }
+
+  /* GPU-acceleration hint for framer-motion elements */
+  .animate-gpu {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Mobile performance: reduce heavy blur on smaller screens */
+@media (max-width: 767px) {
+  .hero-bg-blur {
+    width: 280px !important;
+    height: 280px !important;
+    filter: blur(60px) !important;
+  }
+
+  /* Lighten backdrop-filter cost on mobile header */
+  header {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
   }
 }

@@ -25,7 +25,7 @@ export default function Footer() {
               }
             >
               <img
-                src="/Logo.png"
+                src="/Logo_new.jpeg"
                 alt="Falzin Logo"
                 className="h-10 w-auto object-contain"
               />
@@ -79,20 +79,22 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-4">
                 <li>
-                  <a
+                  <Link
                     className="text-xs text-primary/60 hover:text-primary transition-colors uppercase tracking-widest"
-                    href="#"
+                    to="/privacy"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     Privacy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="text-xs text-primary/60 hover:text-primary transition-colors uppercase tracking-widest"
-                    href="#"
+                    to="/terms"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     Terms
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

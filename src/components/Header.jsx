@@ -24,7 +24,7 @@ export default function Header() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
             <img 
-                src="/Logo.png" 
+                src="/Logo_new.jpeg" 
                 alt="Falzin Logo" 
                 className="h-10 w-auto object-contain"
             />

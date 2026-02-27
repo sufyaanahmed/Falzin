@@ -14,10 +14,10 @@ export default function Metrics() {
         {metrics.map((metric, index) => (
           <motion.div 
             key={index} 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
             className="text-center"
           >
             <div className="serif-title text-6xl text-primary mb-2">

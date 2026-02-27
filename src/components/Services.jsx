@@ -42,10 +42,10 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white p-12 shadow-sm hover:shadow-2xl hover:shadow-accent-burgundy/5 transition-all duration-700 group border border-primary/5 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-accent-burgundy transition-all duration-700"></div>
