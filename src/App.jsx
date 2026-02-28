@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Expertise from './components/Expertise';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
+import Projects from './components/Projects';
 import { ScrollToTop } from './components/ScrollToTop';
 
 function HomePage() {
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/expertise" element={<Expertise />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>

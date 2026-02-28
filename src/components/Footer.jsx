@@ -63,12 +63,13 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="text-xs text-primary/60 hover:text-primary transition-colors uppercase tracking-widest"
-                    href="#"
+                    to="/projects"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     Case Studies
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

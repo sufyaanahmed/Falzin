@@ -41,6 +41,12 @@ export default function Header() {
           >
             Expertise
           </Link>
+          <Link
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary transition-colors cursor-pointer"
+            to="/projects"
+          >
+            Work
+          </Link>
           <a
             className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary transition-colors cursor-pointer"
             onClick={(e) => { e.preventDefault(); smoothScrollTo('method'); }}
