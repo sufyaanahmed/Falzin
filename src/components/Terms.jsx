@@ -68,8 +68,8 @@ export default function Terms() {
             {...fadeUp(0)}
             className="text-primary/70 text-base md:text-lg leading-relaxed font-light mb-16 border-l-2 border-champagne-gold pl-6"
           >
-            Please read these Terms of Service carefully before using the Falzin Digital
-            Atelier website or engaging our services. By accessing this website or entering into
+            Please read these Terms of Service carefully before using the Falzin 
+            website or engaging our services. By accessing this website or entering into
             an engagement with us, you agree to be bound by these terms. If you do not agree,
             please discontinue your use of our website and do not engage our services.
           </motion.p>

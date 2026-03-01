@@ -68,7 +68,7 @@ export default function Privacy() {
             {...fadeUp(0)}
             className="text-primary/70 text-base md:text-lg leading-relaxed font-light mb-16 border-l-2 border-champagne-gold pl-6"
           >
-            At <span className="font-semibold text-primary">Falzin Digital Atelier</span>, the
+            At <span className="font-semibold text-primary">Falzin</span>, the
             privacy of our clients and visitors is not an afterthought — it is a cornerstone of
             how we operate. This Privacy Policy explains what information we collect, how we use
             it, and the choices you have over your personal data.
