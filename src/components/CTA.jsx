@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import CalButton from './ui/CalButton';
 
 export default function CTA() {
   return (
@@ -30,15 +31,16 @@ export default function CTA() {
           We accept a limited number of clients per quarter to ensure obsessive quality control.
         </motion.p>
         
-        <motion.button 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="px-12 py-5 bg-white text-primary font-bold uppercase tracking-[0.3em] text-sm hover:bg-champagne-gold hover:text-white transition-all duration-500"
         >
-          Request an Invitation
-        </motion.button>
+          <CalButton className="px-12 py-5 bg-white text-primary font-bold uppercase tracking-[0.3em] text-sm hover:bg-champagne-gold hover:text-white transition-all duration-500">
+            Request an Invitation
+          </CalButton>
+        </motion.div>
       </div>
     </section>
   );

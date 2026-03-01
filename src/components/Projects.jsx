@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import { ScrollToTop } from "./ScrollToTop";
+import CalButton from "./ui/CalButton";
 
 /* ─────────────────────────────────────────
    PROJECT DATA — update links & content here
@@ -304,18 +305,10 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: 0.1 }}
             >
-              <Link
-                to="/"
-                onClick={() => {
-                  setTimeout(() => {
-                    document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
-                  }, 100);
-                }}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-primary/90 transition-all duration-500"
-              >
+              <CalButton className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-primary/90 transition-all duration-500">
                 Request an Invitation
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
+              </CalButton>
             </motion.div>
           </div>
         </section>

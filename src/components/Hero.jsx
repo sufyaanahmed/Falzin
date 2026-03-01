@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import CalButton from './ui/CalButton';
 
 export default function Hero() {
   return (
@@ -38,14 +39,15 @@ export default function Hero() {
         </motion.p>
         
         <div className="flex flex-col items-center gap-6">
-          <motion.button 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="px-8 md:px-10 py-4 bg-primary text-white font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500"
           >
-            Request an Invitation
-          </motion.button>
+            <CalButton className="px-8 md:px-10 py-4 bg-primary text-white font-bold uppercase tracking-[0.2em] text-sm rounded-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+              Connect with Us
+            </CalButton>
+          </motion.div>
         </div>
       </div>
     </section>
