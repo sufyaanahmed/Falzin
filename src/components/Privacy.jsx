@@ -193,7 +193,7 @@ export default function Privacy() {
 
           <Section title="7. International Data Transfers">
             <p>
-              Falzin Digital Atelier operates across Dubai (UAE) and Bangalore (India). Your
+              Falzin operates across Dubai (UAE) and Bangalore (India). Your
               personal data may be processed in either jurisdiction. Where data is transferred
               internationally, we ensure appropriate safeguards are in place in accordance with
               applicable data protection regulations.
@@ -264,7 +264,7 @@ export default function Privacy() {
               the handling of your personal data, please contact us:
             </p>
             <div className="bg-white border border-primary/10 p-6 rounded-sm mt-4">
-              <p className="font-semibold text-primary mb-1">Falzin Digital Atelier</p>
+              <p className="font-semibold text-primary mb-1">Falzin</p>
               <p>Dubai, United Arab Emirates &amp; Bangalore, India</p>
               <p className="mt-2">
                 Email:{" "}
@@ -292,6 +292,7 @@ export default function Privacy() {
             </Link>
             <Link
               to="/terms"
+              onClick={() => window.scrollTo(0, 0)}
               className="text-xs uppercase tracking-widest text-primary/50 hover:text-primary transition-colors flex items-center gap-2"
             >
               View Terms of Service

@@ -74,9 +74,9 @@ export default function Terms() {
             please discontinue your use of our website and do not engage our services.
           </motion.p>
 
-          <Section title="1. About Falzin Digital Atelier">
+          <Section title="1. About Falzin">
             <p>
-              Falzin Digital Atelier (&ldquo;Falzin&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
+              Falzin (&ldquo;Falzin&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
               or &ldquo;our&rdquo;) is a bespoke digital engineering consultancy headquartered in
               Dubai, UAE, with operations in Bangalore, India. We specialise in custom enterprise
               software, workflow automation, and strategic technology advisory for select clients.
@@ -119,7 +119,7 @@ export default function Terms() {
             <p>
               All content on this Site — including but not limited to text, images, logos,
               typography, design, code, and visual assets — is the exclusive intellectual property
-              of Falzin Digital Atelier or its licensors, and is protected by applicable copyright,
+              of Falzin or its licensors, and is protected by applicable copyright,
               trademark, and intellectual property laws.
             </p>
             <p>
@@ -128,7 +128,7 @@ export default function Terms() {
               prior written consent.
             </p>
             <p>
-              The Falzin name, wordmark, and logo are proprietary marks of Falzin Digital Atelier.
+              The Falzin name, wordmark, and logo are proprietary marks of Falzin.
               Unauthorised use is strictly prohibited.
             </p>
           </Section>
@@ -168,7 +168,7 @@ export default function Terms() {
             <p>
               This Site and all its content are provided on an &ldquo;as is&rdquo; and &ldquo;as
               available&rdquo; basis without any warranties of any kind, either express or implied.
-              To the fullest extent permitted by law, Falzin Digital Atelier expressly disclaims
+              To the fullest extent permitted by law, Falzin expressly disclaims
               all warranties, including but not limited to:
             </p>
             <ul className="list-none space-y-3 pl-4">
@@ -187,7 +187,7 @@ export default function Terms() {
 
           <Section title="7. Limitation of Liability">
             <p>
-              To the maximum extent permitted by applicable law, Falzin Digital Atelier, its
+              To the maximum extent permitted by applicable law, Falzin, its
               directors, employees, and affiliates shall not be liable for any indirect,
               incidental, special, consequential, or punitive damages arising from your use of,
               or inability to use, this Site or any content thereon.
@@ -256,7 +256,7 @@ export default function Terms() {
               out to us:
             </p>
             <div className="bg-white border border-primary/10 p-6 rounded-sm mt-4">
-              <p className="font-semibold text-primary mb-1">Falzin Digital Atelier</p>
+              <p className="font-semibold text-primary mb-1">Falzin</p>
               <p>Dubai, United Arab Emirates &amp; Bangalore, India</p>
               <p className="mt-2">
                 Email:{" "}
@@ -284,6 +284,7 @@ export default function Terms() {
             </Link>
             <Link
               to="/privacy"
+              onClick={() => window.scrollTo(0, 0)}
               className="text-xs uppercase tracking-widest text-primary/50 hover:text-primary transition-colors flex items-center gap-2"
             >
               View Privacy Policy
