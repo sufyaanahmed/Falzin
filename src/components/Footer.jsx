@@ -35,7 +35,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-primary/50 leading-loose">
-              Architecting digital excellence for visionary leaders. Bespoke,
+              Engineering scalable software systems for founders and operators. Bespoke,
               performance-driven, and exclusively refined.
             </p>
           </div>

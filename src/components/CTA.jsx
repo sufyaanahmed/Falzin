@@ -38,7 +38,7 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <CalButton className="px-12 py-5 bg-white text-primary font-bold uppercase tracking-[0.3em] text-sm hover:bg-champagne-gold hover:text-white transition-all duration-500">
-            Request an Invitation
+            Request an Consultation
           </CalButton>
         </motion.div>
       </div>

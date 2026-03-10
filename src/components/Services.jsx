@@ -5,17 +5,17 @@ export default function Services() {
     {
       icon: 'terminal',
       title: 'Custom Enterprise Software',
-      description: 'Scalable, secure, and proprietary platforms designed to match your unique operational DNA.'
+      description: 'Scalable proprietary platforms designed to support complex business operations and large data flows.'
     },
     {
       icon: 'settings_input_component',
       title: 'Workflow Automation',
-      description: 'Removing human friction from high-stakes operations through intelligent agentic systems.'
+      description: 'Automation systems that remove manual work from critical operational processes.'
     },
     {
       icon: 'model_training',
       title: 'Strategic Tech Advisory',
-      description: 'Fractional CTO services and architectural audits for visionary operations leaders.'
+      description: 'Fractional CTO services, architecture reviews, and technical strategy for scaling companies.'
     }
   ];
 
@@ -34,7 +34,7 @@ export default function Services() {
           </h2>
           <div className="w-12 h-px bg-champagne-gold mx-auto mb-6"></div>
           <p className="text-primary/50 text-xs uppercase tracking-[0.5em]">
-            Reserved for the top 1% of founders
+            Built for founders and operators who demand precision
           </p>
         </motion.div>
         

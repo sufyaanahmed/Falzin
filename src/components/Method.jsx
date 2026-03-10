@@ -5,26 +5,30 @@ export default function Method() {
     {
       number: 'I.',
       icon: 'adjust',
-      title: 'Discovery & Audit',
-      description: 'Defining the vision and identifying critical operational bottlenecks within your current architecture.'
+      title: 'Discovery & Systems Audit',
+      description: 'Analyze current systems, workflows, and technical architecture to identify bottlenecks and automation opportunities.',
+      deliverable: 'Operational Systems Audit'
     },
     {
       number: 'II.',
       icon: 'schema',
       title: 'Architectural Blueprint',
-      description: 'Strategic technical mapping and design of a resilient, scalable digital architecture.'
+      description: 'Design the full system architecture including data flows, infrastructure layers, and automation pipelines.',
+      deliverable: 'Technical Architecture Blueprint'
     },
     {
       number: 'III.',
       icon: 'precision_manufacturing',
       title: 'Precision Engineering',
-      description: 'Crafting high-performance digital infrastructure with uncompromising attention to detail.'
+      description: 'Build the platform, internal tools, or automation systems with performance, reliability, and scalability as priorities.',
+      deliverable: 'Production-ready Software Systems'
     },
     {
       number: 'IV.',
       icon: 'insights',
       title: 'Continuous Optimization',
-      description: 'Iterative refinement and performance scaling to ensure enduring competitive advantage.'
+      description: 'Monitor performance, refine workflows, and evolve the system as operations scale.',
+      deliverable: 'Ongoing Systems Optimization'
     }
   ];
 
@@ -50,7 +54,7 @@ export default function Method() {
             transition={{ duration: 0.6 }}
             className="max-w-md text-primary/60 font-light leading-relaxed"
           >
-            Precision engineering meets strategic vision. Our process is a linear journey from raw concept to operational mastery.
+            A structured engineering process — from systems audit to production deployment — built to deliver reliable, scalable software.
           </motion.p>
         </div>
         
@@ -77,6 +81,11 @@ export default function Method() {
               <p className="text-sm text-primary/60 leading-loose">
                 {step.description}
               </p>
+              {step.deliverable && (
+                <p className="mt-4 text-xs uppercase tracking-widest text-champagne-gold font-semibold">
+                  ↳ {step.deliverable}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Method from './components/Method';
+import WhatWeBuilds from './components/WhatWeBuilds';
 import Services from './components/Services';
 import Metrics from './components/Metrics';
 import CTA from './components/CTA';
@@ -18,6 +19,7 @@ function HomePage() {
       <Header />
       <main>
         <Hero />
+        <WhatWeBuilds />
         <Method />
         <Services />
         <Metrics />
