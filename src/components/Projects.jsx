@@ -11,16 +11,15 @@ import CalButton from "./ui/CalButton";
 const projects = [
   {
     id: 1,
-    label: "Service Marketplace",
-    title: "Bayt",
-    tagline: "UAE marketplace connecting building owners with verified service providers.",
+    label: "Equipment Logistics",
+    title: "Kelly SBS",
+    tagline: "Heavy transport, cranes, access equipment, and piling solutions across the UAE & GCC.",
     description:
-        "Bayt is a full-stack service marketplace designed for the UAE that enables building owners to post maintenance or construction jobs and receive competitive quotations from verified local service providers. The platform features separate portals for building owners and service providers, secure phone-based authentication, KYC verification workflows, and structured job lifecycle management from request creation to completion and feedback. It supports controlled quotation limits, provider eligibility filtering based on service activity and location, and a scalable architecture built with modern web technologies for reliable deployment and future marketplace expansion.",
-    tags: ["Service Marketplace", "Quotations", "KYC Verification", "Job Management", "Payments"],
+      "A comprehensive digital platform engineered for Kelly SBS, one of the UAE's trusted transport and heavy equipment rental companies. The platform showcases a GPS-tracked logistics fleet, including mobile/crawler cranes, access platforms, and foundation piling rigs. Designed with a focus on operational compliance, 24/7 breakdown support, and safety standards, the application facilitates seamless service inquiries and B2B client onboarding across the Middle East.",
+    tags: ["React.js", "Tailwind CSS", "Logistics", "B2B Lead Capture", "Fleet Showroom"],
     year: "2025",
     links: [
-        { label: "Building Owners", url: "https://bayt-bo-frontend.vercel.app/" },
-        { label: "Service Providers", url: "https://bayt-sp-frontend.vercel.app/" },
+      { label: "Visit Website", url: "https://kellysbs.com/" },
     ],
     span: "col-span-1 md:col-span-2",
     accent: "from-primary/5 to-primary/10",
@@ -28,18 +27,18 @@ const projects = [
   },
   {
     id: 2,
-    label: "Quant Research Platform",
-    title: "Palrin",
-    tagline: "AI-assisted trading journal and research platform for swing traders.",
+    label: "Corporate Advisory",
+    title: "Al Samiah Management Consulting",
+    tagline: "Strategic, financial, and operational advisory solutions in the Middle East.",
     description:
-    "Palrin is a full-stack trading research and portfolio analytics platform designed to help traders move from macro analysis to trade execution. The system combines company fundamental analysis, sector and industry insights, and macroeconomic indicators from both Indian and US markets to support structured investment decisions. Built with a Next.js + MongoDB architecture and secured through Firebase Google OAuth, Palrin tracks active positions in real time, calculates unrealized and realized P&L, and maintains a detailed trading journal. The platform also includes an integrated investment thesis builder, institutional flow tracking (FII/DII), portfolio analytics, and an AI-powered trade idea engine that suggests swing trade opportunities based on sector strength, macro conditions, and existing portfolio exposure.",
-    tags: ["Next.js", "MongoDB", "Firebase Auth", "Chart.js", "Tailwind", "AI Analytics"],
+      "A professional advisory portal developed for Al Samiah Management Consulting to drive sustainable corporate growth. The platform presents their consulting methodology—Discover, Analyze, Strategize, Implement, and Optimize—alongside specialized services in Corporate Finance, Risk Management, Digital Transformation, and Compliance (VAT/CIT) to bridge the gap between business vision and execution.",
+    tags: ["React.js", "Tailwind CSS", "Financial Advisory", "Strategy Consulting", "Interactive Methodology"],
     year: "2026",
     links: [
-        { label: "Visit Website", url: "https://palrin.com/" },
+      { label: "Visit Website", url: "https://www.asmc-group.com/" },
     ],
     span: "col-span-1",
-    accent: "from-accent-emerald/5 to-accent-emerald/10",
+    accent: "from-champagne-gold/5 to-champagne-gold/10",
     featured: true,
   },
   {
@@ -69,6 +68,39 @@ const projects = [
   },
   {
     id: 4,
+    label: "Service Marketplace",
+    title: "Bayt",
+    tagline: "UAE marketplace connecting building owners with verified service providers.",
+    description:
+        "Bayt is a full-stack service marketplace designed for the UAE that enables building owners to post maintenance or construction jobs and receive competitive quotations from verified local service providers. The platform features separate portals for building owners and service providers, secure phone-based authentication, KYC verification workflows, and structured job lifecycle management from request creation to completion and feedback. It supports controlled quotation limits, provider eligibility filtering based on service activity and location, and a scalable architecture built with modern web technologies for reliable deployment and future marketplace expansion.",
+    tags: ["Service Marketplace", "Quotations", "KYC Verification", "Job Management", "Payments"],
+    year: "2025",
+    links: [
+        { label: "Building Owners", url: "https://bayt-bo-frontend.vercel.app/" },
+        { label: "Service Providers", url: "https://bayt-sp-frontend.vercel.app/" },
+    ],
+    span: "col-span-1 md:col-span-2",
+    accent: "from-primary/5 to-primary/10",
+    featured: true,
+  },
+  {
+    id: 5,
+    label: "Quant Research Platform",
+    title: "Palrin",
+    tagline: "AI-assisted trading journal and research platform for swing traders.",
+    description:
+    "Palrin is a full-stack trading research and portfolio analytics platform designed to help traders move from macro analysis to trade execution. The system combines company fundamental analysis, sector and industry insights, and macroeconomic indicators from both Indian and US markets to support structured investment decisions. Built with a Next.js + MongoDB architecture and secured through Firebase Google OAuth, Palrin tracks active positions in real time, calculates unrealized and realized P&L, and maintains a detailed trading journal. The platform also includes an integrated investment thesis builder, institutional flow tracking (FII/DII), portfolio analytics, and an AI-powered trade idea engine that suggests swing trade opportunities based on sector strength, macro conditions, and existing portfolio exposure.",
+    tags: ["Next.js", "MongoDB", "Firebase Auth", "Chart.js", "Tailwind", "AI Analytics"],
+    year: "2026",
+    links: [
+        { label: "Visit Website", url: "https://palrin.com/" },
+    ],
+    span: "col-span-1",
+    accent: "from-accent-emerald/5 to-accent-emerald/10",
+    featured: true,
+  },
+  {
+    id: 6,
     label: "Car Rental Platform",
     title: "CruiseOnCars",
     tagline: "Real-time vehicle availability, inquiry capture, and instant price quotations.",
@@ -89,7 +121,7 @@ const projects = [
    STAT TILES
 ───────────────────────────────────────────── */
 const stats = [
-  { value: "4", label: "Projects Shipped" },
+  { value: "6", label: "Projects Shipped" },
   { value: "2", label: "Countries Served" },
   { value: "100%", label: "On-time Delivery" },
 ];
@@ -263,7 +295,7 @@ export default function Projects() {
         {/* ── Bento Grid ── */}
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
 
-          {/* Row 1 — Bayt (featured 2/3) + Trade Journal */}
+          {/* Row 1 — Kelly SBS (featured 2/3) + Al Samiah (1/3) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <BentoCard project={projects[0]} index={0} />
             <BentoCard project={{ ...projects[1], span: "col-span-1" }} index={1} />
@@ -276,10 +308,16 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* Row 3 — Muslimah + CruiseOnCars (2/3) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Row 3 — Muslimah (1/3) + Bayt (2/3) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <BentoCard project={{ ...projects[2], span: "col-span-1" }} index={2} />
             <BentoCard project={{ ...projects[3], span: "col-span-1 md:col-span-2" }} index={3} />
+          </div>
+
+          {/* Row 4 — Palrin (1/3) + CruiseOnCars (2/3) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <BentoCard project={{ ...projects[4], span: "col-span-1" }} index={4} />
+            <BentoCard project={{ ...projects[5], span: "col-span-1 md:col-span-2" }} index={5} />
           </div>
         </section>
 
